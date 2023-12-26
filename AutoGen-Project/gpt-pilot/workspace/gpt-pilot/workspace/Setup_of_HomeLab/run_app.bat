@@ -1,3 +1,5 @@
-@echo off
-cd homelab
+@echo off
+
+cd homelab
+
 python manage.py runserver 8080
