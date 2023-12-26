@@ -27,7 +27,7 @@ Copy code
 docker-compose up -d --build
 '''
 
-Access the application at http://localhost:8080/.
+Access the application at http://localhost:8000/.
 
 Configuration
 The project is set up with Docker and includes:
