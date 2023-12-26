@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -112,13 +113,25 @@ USE_I18N = True
 USE_TZ = True
 
 ROOT_URLCONF = 'homelab.urls'
+
 WSGI_APPLICATION = 'homelab.wsgi.application'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', 'homelab'),
+        'USER': os.getenv('DB_USER', 'homelab'),
+        'PASSWORD': os.getenv('DB_PASS', 'homelab_secret'),
+        'HOST': os.getenv('DB_SERVICE', 'db'),
+        'PORT': os.getenv('DB_PORT', 5432),
+    }
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

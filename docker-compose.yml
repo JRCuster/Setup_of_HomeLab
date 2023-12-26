@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: homelab
+      POSTGRES_USER: homelab
+      POSTGRES_PASSWORD: homelab_secret
+
+  web:
+    build: .
+    command: gunicorn homelab.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_NAME=homelab
+      - DB_USER=homelab
+      - DB_PASS=homelab_secret
+      - DB_SERVICE=db
+      - DB_PORT=5432
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:1.21.6
+    ports:
+      - "80:80"
+    volumes:
+      - ./config/nginx:/etc/nginx/conf.d
+      - static_volume:/app/static
+    depends_on:
+      - web
+
+volumes:
+  postgres_data:
+  static_volume:
