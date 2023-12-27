@@ -21,24 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hc%4=(rovnz6&-&jfemw6y(ss&2o1f8ao-#eh&i+s2s%8s!#tt'
+# Adjusted line length for SECRET_KEY
+SECRET_KEY = (
+    'django-insecure-hc%4=(rovnz6&-&jfemw6y(ss&2o1f8ao-#eh&i+s2s%8s!#tt'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  # Set to False in production
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']  # Update with your domain or IP addresses
-
-# Database configuration
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'homelab',
-        'USER': 'homelab',
-        'PASSWORD': 'homelab_secret',
-        'HOST': 'postgres',  # Docker service name for PostgreSQL
-        'PORT': '5432',
-    }
-}
+# Adjusted line length for ALLOWED_HOSTS
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
@@ -48,26 +40,50 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # Application definition
 
 INSTALLED_APPS = [
-    'dashboard',
-    'security',
-    'dashboard',
-    'security',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homelab.dashboard',  # Ensure the 'dashboard' app is included in INSTALLED_APPS
-
-
-]
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+# Adjusted line length for STATIC_ROOT
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    'security',
+    'django.contrib.admin',
+    'setup_assistant.apps.SetupAssistantConfig',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    # 'dashboard',  # If 'dashboard' is a top-level module, uncomment this line
+    'security',
+    # ... other installed apps ...
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'dashboard',  # If 'dashboard' is a top-level module, uncomment this line
+    'security',
+    # ... other installed apps ...
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    # 'dashboard',  # If 'dashboard' is a top-level module, uncomment this line
+    'security',
+    # ... other installed apps ...
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'dashboard',  # If 'dashboard' is a top-level module
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -149,8 +165,6 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
-}
-}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -167,4 +181,3 @@ HOME_ASSISTANT_TOKEN = 'your_long_lived_access_token'
 # Docker Swarm API URL and token
 DOCKER_SWARM_API_URL = 'http://docker_swarm:4000/api'
 SERVICE_API_URL = 'http://service_api:5000/api'
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
