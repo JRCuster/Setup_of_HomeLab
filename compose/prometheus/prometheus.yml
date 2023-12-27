@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'docker_swarm'
+    static_configs:
+      - targets: ['<swarm_manager_ip>:<swarm_manager_port>']

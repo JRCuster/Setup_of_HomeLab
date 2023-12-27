@@ -78,6 +78,6 @@ The following environment variables should be set:
 Contributing Instructions for how to contribute, report issues, and request features.
 
 License
-MIT License (MIT) © 2020 Custer
+MIT License (MIT) © 2003 Custer
 
 Contact drrohinshadow@gmail.com
