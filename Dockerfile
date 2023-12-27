@@ -15,7 +15,7 @@ COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
-    && rm -rf /var/lib/apt/lists/*
+    RUN rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container
 WORKDIR /app
