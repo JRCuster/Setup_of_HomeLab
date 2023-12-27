@@ -19,8 +19,6 @@ Setup of HomeLab
 - Implement systems monitoring with push notifications to an app on the user's phone for maintenance tasks or emergencies.
 - Design the dashboard with a "fantasy" theme, using images, fonts, and colors to create a visually appealing and engaging experience.
 
-
-
 ## Project Deliverables
 
 - Docker Swarm cluster on 4 Raspberry Pi 4B devices.
@@ -28,7 +26,6 @@ Setup of HomeLab
 - Django Dashboard source code.
 - Documentation for the dashboard.
 - User training materials.
-
 
 ## Project Milestones
 
@@ -40,7 +37,6 @@ Setup of HomeLab
 - Milestone 6: Complete user interface design.
 - Milestone 7: Complete project and deliver deliverables.
 
-
 ## Subprojects
 
 1. Docker Swarm Cluster Setup
@@ -51,13 +47,9 @@ Setup of HomeLab
 6. Systems Monitoring Deployment
 7. Django Dashboard Development
 
-
-## Project Management Dashboard
-
 ## Project Management Dashboard
 
 A Google Sheets project management dashboard will be created to track the progress of the project. The dashboard will be automatically updated with the progress of each subproject. The dashboard will also include a separate tab for each subproject, with detailed information about the subproject. All of the data in the dashboard will be snapshotted to a database every hour to maintain a historical record and facilitate progress tracking.
-
 
 ## Progress Update
 
