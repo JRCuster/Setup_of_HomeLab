@@ -22,7 +22,7 @@ cd Setup_of_HomeLab
 Start by building a base Docker image that includes your Python environment and any system dependencies:
 
 ```bash
-docker build -t homelab_base -f Dockerfile.base .
+docker-compose build base
 ```
 
 This Dockerfile should not include the application itself or any application-specific dependencies.
@@ -32,7 +32,7 @@ This Dockerfile should not include the application itself or any application-spe
 Run a container from the base image to ensure that it has been set up correctly:
 
 ```bash
-docker run --rm -it homelab_base /bin/bash
+docker-compose run --rm base
 ```
 
 You should be able to start a bash session within the container without encountering any errors.

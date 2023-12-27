@@ -1,7 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // JavaScript code for interactivity and real-time updates will go here
-    function fetchData() {
-        fetch('/dashboard/data/')
+function updateDashboard() {
+    // Example AJAX call to update dashboard elements
+    fetch('/dashboard/data/')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Dashboard data:', data);
+            // Update dashboard elements with new data
+        })
+        .catch(error => console.error('Error fetching dashboard data:', error));
+}
+
+// Call updateDashboard every 30 seconds
+setInterval(updateDashboard, 30000);
             .then(response => response.json())
             .then(data => {
                 // Update the dashboard with the fetched data

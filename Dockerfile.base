@@ -1,0 +1,13 @@
+# Use an official lightweight Python image
+FROM python:3.8-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy only the requirements file, to cache the pip install step if no changes to requirements
+COPY requirements.txt /app/
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# This base image does not include the application itself or any application-specific dependencies
