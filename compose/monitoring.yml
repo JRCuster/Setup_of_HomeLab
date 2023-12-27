@@ -31,4 +31,8 @@ volumes:
     command:
       - '--config.file=/etc/alertmanager/alertmanager.yml'
   grafana_data:
-  grafana_data:
+  prometheus_data:
+  postgres_data:
+  portainer_data:
+
+

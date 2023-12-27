@@ -65,6 +65,7 @@ This document provides guidelines and instructions for developers contributing t
 - If you are responsible for a subproject, keep its section of the dashboard up-to-date with the latest status and milestones.
 
 ## Snapshotting Dashboard Data to a Database
+
 - If the project requires historical tracking of progress, set up a system to snapshot the dashboard data to a database.
 - This can be done through automated scripts that run at regular intervals, depending on the capabilities of the project management tool and the database system.
 - By maintaining an accurate and up-to-date project management dashboard, the team can ensure that all members are aligned and informed about the project's progress and deadlines.
