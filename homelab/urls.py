@@ -1,3 +1,10 @@
+from django.urls import path
+from .views import pihole_status
+
+urlpatterns = [
+    path('dashboard/pihole-status/', pihole_status, name='pihole_status'),
+    # ... other url patterns ...
+]
 """
 URL configuration for homelab project.
 

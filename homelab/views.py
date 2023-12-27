@@ -1,3 +1,9 @@
+from django.http import JsonResponse
+
+def pihole_status(request):
+    # Placeholder for actual PiHole status fetching logic
+    status = 'Active'  # This should be replaced with actual status check
+    return JsonResponse({'status': status})
 from django.http import HttpResponse
 
 def home(request):
