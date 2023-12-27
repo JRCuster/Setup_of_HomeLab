@@ -7,7 +7,8 @@ ENV PYTHONUNBUFFERED 1
 
 # Install system dependencies
 RUN apt-get update \
-    && apt-get install -y libpq-dev gcc \
+    && apt-get install -y libpq-dev gcc
+
 # Copy the entrypoint script into the container
 COPY ./entrypoint.sh /entrypoint.sh
 
