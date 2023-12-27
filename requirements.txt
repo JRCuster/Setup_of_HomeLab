@@ -1,3 +1,6 @@
 Django==5.0
 gunicorn==20.1.0
 psycopg2-binary==2.9.3
+
+# Add any new dependencies here, and update existing ones to their latest versions
+# Example: Django==3.2.8

@@ -29,6 +29,13 @@ For setting up Prometheus and Grafana, use the `compose/monitoring.yml` Docker C
 docker-compose -f compose/monitoring.yml up -d
 ```
 Access Prometheus at `http://<master-node-ip>:9090/` and Grafana at `http://<master-node-ip>:3000/`. Configure Grafana to use Prometheus as the data source and set up the desired dashboards for monitoring.
-Access Prometheus at `http://<master-node-ip>:9090/` and Grafana at `http://<master-node-ip>:3000/`. Configure Grafana to use Prometheus as the data source and set up the desired dashboards for monitoring.
 
+## Alerting and Notifications
+Configure alerting rules in Prometheus to monitor the health of the Docker Swarm cluster and services. Set up Alertmanager to handle alerts and route them to the appropriate notification channels, such as email or Slack.
+
+## SSL Configuration
+Ensure that SSL is configured for secure communication. Follow the instructions in `security/ssl_config.conf` to set up SSL certificates and update the Nginx configuration to use HTTPS.
+
+## Final Steps
+After completing the above steps, verify that all services are running correctly and that the dashboard is accessible and displaying data as expected. Consult the `USER_MANUAL.md` for guidance on using the dashboard and the monitoring tools.
 ... (additional setup instructions)

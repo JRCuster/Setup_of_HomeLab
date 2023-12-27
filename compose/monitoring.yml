@@ -22,5 +22,13 @@ services:
       - "3000:3000"
 
 volumes:
+  alertmanager:
+    image: prom/alertmanager
+    volumes:
+      - ./prometheus/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    ports:
+      - "9093:9093"
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
   grafana_data:
   grafana_data:

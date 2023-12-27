@@ -13,6 +13,14 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),  # Enable built-in auth views
+    path('', include('your_app.urls')),  # Replace 'your_app' with your actual app name
+]
 """
 from django.contrib import admin
 from django.urls import path

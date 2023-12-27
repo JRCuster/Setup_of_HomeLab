@@ -13,6 +13,22 @@ def dashboard(request):
         # Add more context data as needed
     }
     return render(request, 'dashboard.html', context)
+from .dashboard_utils import fetch_cluster_status, fetch_service_health
+
+# Endpoint for fetching dashboard data in JSON format
+def dashboard_data(request):
+    data = {
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def secure_view(request):
+    # Your view logic here
+    pass
+        'cluster_status': fetch_cluster_status(),
+        'service_health': fetch_service_health(),
+        # Include additional data as needed
+    }
+    return JsonResponse(data)
 from django.conf import settings
 from django.http import JsonResponse
 

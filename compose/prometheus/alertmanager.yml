@@ -1,0 +1,30 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 10m
+  repeat_interval: 1h
+  receiver: 'email_notifications'
+  routes:
+    - match:
+        severity: critical
+      receiver: 'pager_notifications'
+
+receivers:
+- name: 'email_notifications'
+  email_configs:
+  - to: 'your-email@example.com'
+    send_resolved: true
+
+- name: 'pager_notifications'
+  pagerduty_configs:
+  - service_key: 'your-pagerduty-key'
+
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'cluster', 'service']
