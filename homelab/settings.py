@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homelab.dashboard',  # Ensure the 'dashboard' app is included in INSTALLED_APPS
     'security',
     'setup_assistant.apps.SetupAssistantConfig',
     # ... other installed apps ...
