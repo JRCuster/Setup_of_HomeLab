@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.shortcuts import render, redirect
 from .forms import SetupForm
 
 def setup_environment(request):
