@@ -8,3 +8,28 @@
 #cluster-status {
     margin-top: 10px;
 }
+/* Additional styles for the fantasy theme */
+.dashboard-header {
+    /* The background image URL should be set dynamically in the view or preprocessed */
+    background-color: #6a5acd; /* Example fallback color */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style updates for responsiveness */
+@media (max-width: 768px) {
+    #dashboard-container {
+        padding: 10px;
+    }
+}
+
+/* Continue refining styles for other components */
+.service-health {
+    padding: 5px;
+    background-color: #4caf50; /* Green for healthy */
+    color: white;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+}

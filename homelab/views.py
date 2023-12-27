@@ -27,3 +27,11 @@ def home_assistant_status(request):
         return JsonResponse(response.json(), safe=False)
     except requests.exceptions.RequestException as e:
         return JsonResponse({'error': str(e)}, status=502)
+# Endpoint for fetching dashboard data in JSON format
+def dashboard_data(request):
+    data = {
+        'cluster_status': fetch_cluster_status(),
+        'service_health': fetch_service_health(),
+        # Include additional data as needed
+    }
+    return JsonResponse(data)

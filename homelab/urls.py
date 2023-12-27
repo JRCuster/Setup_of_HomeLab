@@ -22,5 +22,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('home-assistant/status/', views.home_assistant_status, name='home-assistant-status'),
+    path('dashboard/data/', views.dashboard_data, name='dashboard-data'),
     path('dashboard/', views.dashboard, name='dashboard'),
 ]

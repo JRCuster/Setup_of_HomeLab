@@ -139,4 +139,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Home Assistant Configuration
 HOME_ASSISTANT_API_URL = 'http://home_assistant:8123/api/'
 HOME_ASSISTANT_TOKEN = 'your_long_lived_access_token'
+# Docker Swarm API URL and token
+DOCKER_SWARM_API_URL = 'http://docker_swarm:4000/api'
+SERVICE_API_URL = 'http://service_api:5000/api'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
