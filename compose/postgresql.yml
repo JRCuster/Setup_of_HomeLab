@@ -9,6 +9,13 @@ services:
       POSTGRES_DB: homelab
       POSTGRES_USER: homelab
       POSTGRES_PASSWORD: homelab_secret
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
     ports:
       - "5432:5432"
 

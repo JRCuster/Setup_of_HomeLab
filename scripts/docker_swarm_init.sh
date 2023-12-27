@@ -2,5 +2,6 @@
 # Initialize Docker Swarm on the master node
 docker swarm init
 
-# Join worker nodes to the cluster (replace with actual tokens and IP addresses)
-# docker swarm join --token <SWMTKN> <MASTER_NODE_IP>:2377
+# Output the join command for worker nodes
+echo "To add a worker to this swarm, run the following command on the worker node:"
+docker swarm join-token worker | grep "docker swarm join"

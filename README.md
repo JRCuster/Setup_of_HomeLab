@@ -28,6 +28,35 @@ docker-compose up -d --build
 '''
 
 Access the application at http://localhost:8000/.
+## Docker Swarm Setup
+
+To initialize the Docker Swarm cluster on the master node, run:
+
+```bash
+./scripts/docker_swarm_init.sh
+```
+
+Follow the instructions output by the script to join worker nodes to the swarm.
+
+Once the swarm is initialized, deploy the services using the provided Docker Compose files:
+
+```bash
+docker stack deploy -c docker-compose.yml homelab
+```
+
+For each additional service, use the respective Docker Compose file:
+
+```bash
+docker stack deploy -c compose/home_assistant.yml home_assistant
+docker stack deploy -c compose/postgresql.yml postgresql
+# Repeat for other services...
+```
+
+Ensure that all services are running correctly using:
+
+```bash
+docker service ls
+```
 
 Configuration
 The project is set up with Docker and includes:
