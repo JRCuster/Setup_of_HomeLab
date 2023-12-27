@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dashboard.apps.DashboardConfig',  # Ensure this is the correct path to your dashboard app's configuration
 ]
 
 MIDDLEWARE = [
