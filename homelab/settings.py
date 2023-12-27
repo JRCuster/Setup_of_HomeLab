@@ -58,8 +58,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homelab.dashboard',  # Add the 'dashboard' app as a submodule of 'homelab'
-    'dashboard.apps.DashboardConfig',  # Ensure this is the correct path to your dashboard app's configuration
+    'homelab.dashboard',  # Ensure the 'dashboard' app is included in INSTALLED_APPS
+
+
 ]
 
 MIDDLEWARE = [
