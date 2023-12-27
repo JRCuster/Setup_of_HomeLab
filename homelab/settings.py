@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-import os
+import os  # Added import statement for the 'os' module
 
 from pathlib import Path
 
@@ -46,45 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-# Adjusted line length for STATIC_ROOT
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    'homelab.dashboard',  # Ensure the 'dashboard' app is included in INSTALLED_APPS
     'security',
-    'django.contrib.admin',
     'setup_assistant.apps.SetupAssistantConfig',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    # 'dashboard',  # If 'dashboard' is a top-level module, uncomment this line
-    'security',
     # ... other installed apps ...
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
     'dashboard',  # If 'dashboard' is a top-level module, uncomment this line
-    'security',
     # ... other installed apps ...
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    # 'dashboard',  # If 'dashboard' is a top-level module, uncomment this line
-    'security',
-    # ... other installed apps ...
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'dashboard',  # If 'dashboard' is a top-level module
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
