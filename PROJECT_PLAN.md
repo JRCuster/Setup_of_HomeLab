@@ -55,5 +55,28 @@ As of the latest update, the following progress has been made:
 - Environment variables related to the Django secret key and Home Assistant configuration have been added to the docker-compose.yml file.
 
 Next steps include further development of the Django Dashboard, integration with other services, and the implementation of systems monitoring and push notifications. The user interface design will also be completed in line with the "fantasy" theme outlined in the project goals.
+## Dashboard Development Progress
+
+### Completed Tasks:
+- Created a new Python module `dashboard_utils.py` for backend interactions with Docker Swarm API and other services.
+- Added placeholder functions `fetch_cluster_status` and `fetch_service_health` to simulate data fetching from services.
+- Updated the `dashboard` view in `views.py` to include additional context data for the dashboard.
+- Implemented initial JavaScript functions in `dashboard.js` for dynamic updates of the dashboard using AJAX.
+- Started styling the dashboard with CSS in `dashboard.css` to match the project's "fantasy" theme.
+
+### Pending Updates:
+- Replace placeholder functions in `dashboard_utils.py` with actual Docker Swarm API interactions and service data retrieval.
+- Enhance the `dashboard` view to handle AJAX requests efficiently and return structured JSON data.
+- Refine JavaScript error handling in `dashboard.js` and ensure the dashboard components are updated correctly with new data.
+- Complete the CSS styling in `dashboard.css` to fully realize the "fantasy" theme, focusing on responsiveness and design consistency.
+- Test the frontend real-time updates to ensure accurate reflection of the cluster and service statuses.
+- Implement necessary user authentication and authorization for dashboard access control.
+- Conduct comprehensive testing of both backend and frontend to validate the dashboard's functionality and user experience.
+- Review and refactor the code to optimize performance, readability, and maintainability.
+
+### Notes:
+- As the development progresses, we will continue to document any challenges and solutions.
+- Any changes to the project scope or timeline will be recorded to keep all stakeholders updated.
+- Code reviews will be scheduled to ensure adherence to best practices and project standards.
 ## Hardware Utilization
 All of the hardware needs to will be utilized as much as possible. The Docker Swarm cluster will be configured to use all of the CPU, GPU, and RAM resources on the devices.

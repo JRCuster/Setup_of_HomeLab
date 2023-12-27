@@ -7,3 +7,13 @@ __pycache__
 .env
 *.log
 homelab/db.sqlite3
+
+# Ignore virtual environment
+venv/
+.env
+
+# Ignore media files
+media/
+
+# Ignore local settings
+*local_settings.py

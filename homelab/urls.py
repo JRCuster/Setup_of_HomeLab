@@ -21,4 +21,6 @@ from . import views  # Make sure views is also correctly defined
 urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
+    path('home-assistant/status/', views.home_assistant_status, name='home-assistant-status'),
+    path('dashboard/', views.dashboard, name='dashboard'),
 ]

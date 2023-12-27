@@ -136,4 +136,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
+# Home Assistant Configuration
+HOME_ASSISTANT_API_URL = 'http://home_assistant:8123/api/'
+HOME_ASSISTANT_TOKEN = 'your_long_lived_access_token'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

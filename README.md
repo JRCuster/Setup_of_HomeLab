@@ -68,6 +68,12 @@ docker-compose exec web python manage.py collectstatic
 Environment Variables
 
 Configure the environment variables as needed in docker-compose.yml and the Django settings.py file.
+# Environment Variables
+The following environment variables should be set:
+- `DJANGO_SECRET_KEY`: The secret key used in production.
+- `HOME_ASSISTANT_API_URL`: The API URL for Home Assistant.
+- `HOME_ASSISTANT_TOKEN`: The long-lived access token for Home Assistant.
+
 
 Contributing Instructions for how to contribute, report issues, and request features.
 

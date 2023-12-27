@@ -18,12 +18,14 @@ services:
     ports:
       - "8000:8000"
     environment:
+      - DJANGO_SECRET_KEY=django-insecure-hc%4=(rovnz6&-&jfemw6y(ss&2o1f8ao-#eh&i+s2s%8s!#tt
+      - HOME_ASSISTANT_API_URL=http://home_assistant:8123/api/
+      - HOME_ASSISTANT_TOKEN=your_long_lived_access_token
       - DB_NAME=homelab
       - DB_USER=homelab
       - DB_PASS=homelab_secret
       - DB_SERVICE=db
       - DB_PORT=5432
-    depends_on:
       - db
 
   nginx:
