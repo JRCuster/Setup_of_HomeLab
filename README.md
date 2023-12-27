@@ -1,4 +1,4 @@
-```bash
+
 # Setup_of_HomeLab
 
 ## Project Overview
