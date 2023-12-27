@@ -1,0 +1,4 @@
+/* Accessibility enhancements for the dashboard */
+:focus {
+    outline: 3px solid #f1c40f; /* High contrast outline for focused elements */
+}

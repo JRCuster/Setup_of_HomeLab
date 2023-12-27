@@ -1,0 +1,16 @@
+# This is a sample GitLab CI configuration file
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - python manage.py test
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying application..."
+    # Add deployment scripts here

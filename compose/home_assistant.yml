@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  home_assistant:
+    image: homeassistant/home-assistant:stable
+    volumes:
+      - /PATH_TO_YOUR_CONFIG:/config
+    environment:
+      - TZ=YOUR_TIMEZONE
+    ports:
+      - "8123:8123"
+    restart: unless-stopped
