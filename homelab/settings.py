@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hc%4=(rovnz6&-&jfemw6y(ss&2o1f8ao-#eh&i+s2s%8s!#tt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True  # Set to False in production
 
-ALLOWED_HOSTS = ['*']  # Update with your domain or IP addresses
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']  # Update with your domain or IP addresses
 
 # Database configuration
 DATABASES = {
@@ -145,9 +145,11 @@ DATABASES = {
         'NAME': os.getenv('DB_NAME', 'homelab'),
         'USER': os.getenv('DB_USER', 'homelab'),
         'PASSWORD': os.getenv('DB_PASS', 'homelab_secret'),
-        'HOST': os.getenv('DB_SERVICE', 'db'),
-        'PORT': os.getenv('DB_PORT', 5432),
+        'HOST': os.getenv('DB_SERVICE', 'postgres'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
+}
+}
 }
 
 # Static files (CSS, JavaScript, Images)

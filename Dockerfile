@@ -1,3 +1,5 @@
+# Ensure the Dockerfile is set up to build the Django application image correctly
+# Ensure the Dockerfile is set up to build the Django application image correctly
 # Use an official Python runtime as a parent image
 FROM python:3.10-slim
 

@@ -29,6 +29,15 @@ For setting up Prometheus and Grafana, use the `compose/monitoring.yml` Docker C
 docker-compose -f compose/monitoring.yml up -d
 ```
 Access Prometheus at `http://<master-node-ip>:9090/` and Grafana at `http://<master-node-ip>:3000/`. Configure Grafana to use Prometheus as the data source and set up the desired dashboards for monitoring.
+## PiHole Deployment
+To deploy PiHole as a DNS and ad-blocking service, use the `compose/pihole.yml` Docker Compose file. Before deploying, ensure you customize the `compose/pihole.yml` file with your specific settings, such as timezone and admin password.
+
+Run the following command to deploy PiHole to your Docker Swarm cluster:
+```
+docker stack deploy -c compose/pihole.yml pihole
+```
+
+After deployment, PiHole will be accessible on port 80 of the node where it is running. You can manage PiHole by accessing `http://<node-ip>/admin/` in a web browser, replacing `<node-ip>` with the IP address of the node running PiHole.
 
 ## Alerting and Notifications
 Configure alerting rules in Prometheus to monitor the health of the Docker Swarm cluster and services. Set up Alertmanager to handle alerts and route them to the appropriate notification channels, such as email or Slack.

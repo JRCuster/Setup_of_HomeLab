@@ -12,6 +12,8 @@ import requests
 from django.shortcuts import render
 
 # New view for the dashboard
+# Ensure the 'dashboard' view is included and correctly defined
+# Ensure the 'dashboard' view is included and correctly defined
 def dashboard(request):
     # Placeholder context data
     context = {

@@ -86,12 +86,7 @@ Following these guidelines will help protect your account and the HomeLab system
 - Back up your configuration files and databases periodically to prevent data loss.
 
 Please report any issues or suggest improvements through the project's issue tracker or contact the project maintainers directly.
-## Security Guidelines for Users
-- Always keep your login credentials confidential and use strong, unique passwords.
-- Ensure that your connection to the HomeLab dashboard is secure, indicated by 'https' in the URL.
-- Log out of the dashboard when access is no longer needed, especially on shared devices.
-- Report any suspicious activity or security concerns to the system administrator immediately.
-
 Following these guidelines will help protect your account and the HomeLab system from unauthorized access and potential security threats.
+Please note that some features may require administrative privileges. Contact your system administrator if you need additional access or encounter any issues.
 Please note that some features may require administrative privileges. Contact your system administrator if you need additional access or encounter any issues.
 ... (additional user instructions)

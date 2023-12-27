@@ -27,7 +27,6 @@ This document provides instructions for regular maintenance tasks to keep the Ho
 - Optimize the Docker Swarm services to ensure efficient use of CPU, memory, and storage resources.
 - Consider implementing Docker Swarm features like resource limits and reservations to manage the distribution of resources.
 - Regularly review the performance metrics and logs to identify opportunities for optimization.
-
-Remember to perform these optimization tasks during maintenance windows to minimize impact on service availability.
+- Remember to perform these optimization tasks during maintenance windows to minimize impact on service availability.
 
 Remember to schedule regular maintenance windows to perform these tasks without disrupting service availability.

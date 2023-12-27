@@ -86,5 +86,4 @@ docker-compose logs web
 ```
 
 ## Conclusion
-
-After completing these steps, you should have a running instance of the Django application and all related services in a Docker Swarm environment. This concludes Phase 1 of the deployment process. Ensure that all services are functioning as expected before proceeding to the next phase.
+Successfully completing Phase 1 indicates that the Docker Compose files and the Django application are functioning correctly in a development environment. This sets the foundation for further testing and deployment in a production environment.

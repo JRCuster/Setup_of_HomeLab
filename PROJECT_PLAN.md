@@ -114,7 +114,6 @@ Next steps include further development of the Django Dashboard, integration with
 - Code reviews will be scheduled to ensure adherence to best practices and project standards.
 
 ## Hardware Utilization
-
 - The Docker Swarm cluster will be configured to maximize the use of CPU, GPU, and RAM resources across the 4 Raspberry Pi 4B devices.
 - Performance metrics will be monitored to ensure efficient resource utilization and to identify any bottlenecks or opportunities for optimization.
 - Resource limits and reservations will be set for services where appropriate to manage resource allocation within the Docker Swarm environment.

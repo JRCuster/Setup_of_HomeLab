@@ -49,5 +49,6 @@ Double-check all configuration files, including `docker-compose.yml`, Nginx conf
 Document any changes made during this phase, including optimizations, configurations, and any troubleshooting steps taken.
 
 ## Conclusion
+This phase involves intermediate configurations and optimizations that are crucial for a stable and efficient deployment. Ensure that all changes are documented and tested before moving on to the next phase.
 
 Once you have completed these intermediate steps, your Docker environment should be more secure, optimized, and ready for the full testing phase outlined in `DEPLOY_PHASE-1.md`.

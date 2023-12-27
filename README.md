@@ -58,18 +58,12 @@ Ensure that all services are running correctly using:
 docker service ls
 ```
 
-Configuration
+## Configuration
 The project is set up with Docker and includes:
-
-Dockerfile: Configuration for building the Django/Gunicorn application Docker image.
-
-docker-compose.yml: Docker Compose configuration for orchestrating multi-container Docker applications.
-
-requirements.txt: List of Python dependencies for the Django application.
-
-config/nginx: Nginx configuration files for serving the application.
-
-Database Migrations
+- Dockerfile: Configuration for building the Django/Gunicorn application Docker image.
+- docker-compose.yml: Docker Compose configuration for orchestrating multi-container Docker applications.
+- requirements.txt: List of Python dependencies for the Django application.
+- config/nginx: Nginx configuration files for serving the application.
 
 To apply database migrations, run:
 

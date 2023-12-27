@@ -103,5 +103,5 @@ docker-compose logs
 ```
 
 ## Conclusion
-
+This document outlines the initial steps for setting up the Docker environment for the HomeLab project. Follow each step carefully and ensure that the base Docker image and the Django application are functioning correctly before proceeding.
 Following these steps will help you validate the Docker environment and ensure that the application is ready for further deployment phases. Once you have confirmed that everything is working as expected, you can proceed to `DEPLOY_PHASE-1.md` for the next steps in the deployment process.

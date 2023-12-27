@@ -1,3 +1,4 @@
+// Ensure the JavaScript functions for updating the dashboard are correctly defined
 function updateDashboard() {
     // Example AJAX call to update dashboard elements
     fetch('/dashboard/data/')

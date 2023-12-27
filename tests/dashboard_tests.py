@@ -1,3 +1,5 @@
+# Ensure there are tests for the dashboard functionality
+# Ensure there are tests for the dashboard functionality
 from django.test import TestCase
 from django.urls import reverse
 

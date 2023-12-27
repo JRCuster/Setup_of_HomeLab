@@ -24,9 +24,7 @@ services:
       - DB_USER=homelab
       - DB_PASS=homelab_secret
       - DB_SERVICE=db
-      - DB_PORT=5432
-      - db
-
+      - DB_SERVICE: postgres
   nginx:
     image: nginx:1.21.6
     ports:

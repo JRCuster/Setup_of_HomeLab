@@ -10,8 +10,8 @@ services:
       - "80:80/tcp"
       - "443:443/tcp"
     environment:
-      TZ: YOUR_TIMEZONE
-      WEBPASSWORD: YOUR_ADMIN_PASSWORD
+      TZ: 'America/New_York'  # Replace with your actual timezone
+      WEBPASSWORD: 'your_admin_password'  # Replace with your desired admin password
     volumes:
        - ./etc-pihole/:/etc/pihole/
        - ./etc-dnsmasq.d/:/etc/dnsmasq.d/
