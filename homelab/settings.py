@@ -30,7 +30,7 @@ SECRET_KEY = (
 DEBUG = True  # Set to False in production
 
 # Adjusted line length for ALLOWED_HOSTS
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '10.60.1.91']
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+    'dashboard.apps.DashboardConfig',  # Replace with the correct path if different
 
 ROOT_URLCONF = 'homelab.urls'
 
