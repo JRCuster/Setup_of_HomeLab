@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nerd Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <section id="dragons">
+        <h2>Dragons</h2>
+        {% for dragon in dragons %}
+            <div class="dragon">
+                <h3>{{ dragon.name }}</h3>
+                <p>{{ dragon.description }}</p>
+            </div>
+        {% empty %}
+            <p>No dragons found.</p>
+        {% endfor %}
+    </section>
+    <section id="treasures">
+        <h2>Treasures</h2>
+        {% for treasure in treasures %}
+            <div class="treasure">
+                <h3>{{ treasure.name }}</h3>
+                <p>{{ treasure.description }}</p>
+            </div>
+        {% empty %}
+            <p>No treasures found.</p>
+        {% endfor %}
+    </section>
+</body>
+</html>

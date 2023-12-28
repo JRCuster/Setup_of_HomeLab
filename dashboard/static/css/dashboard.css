@@ -1,0 +1,22 @@
+#dragons {
+    margin-bottom: 20px;
+    background-color: #4a2f48; /* Dark, mystical purple */
+    padding: 15px;
+    border: 2px solid #6b3f5e; /* Slightly lighter purple for the border */
+    color: #f8eedb; /* Light, almost cream color for the text */
+    font-family: 'Merriweather', serif; /* A font that gives an old-world feel */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#treasures {
+    margin-bottom: 20px;
+    background-color: #d1a755; /* A rich, golden color reminiscent of treasure */
+    padding: 15px;
+    border: 2px solid #b98c44; /* A deeper shade of gold for the border */
+    color: #402a19; /* A deep, earthy brown for the text, like aged parchment */
+    font-family: 'Cinzel', serif; /* A decorative font for an ancient, regal feel */
+    border-radius: 10px; /* Rounded corners for a polished look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* A more pronounced shadow for depth */
+    text-align: center; /* Center align the content for a more formal presentation */
+}

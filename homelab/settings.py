@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# Adjusted line length for SECRET_KEY
+SECRET_KEY = 'django-insecure-hc%4=(rovnz6&-&jfemw6y(ss&2o1f8ao-#eh&i+s2s%8s!#tt'
 SECRET_KEY = (
     'django-insecure-hc%4=(rovnz6&-&jfemw6y(ss&2o1f8ao-#eh&i+s2s%8s!#tt'
 )
@@ -46,15 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'security',
-    'setup_assistant.apps.SetupAssistantConfig',
     # ... other installed apps ...
-    'dashboard',  # If 'dashboard' is a top-level module, uncomment this line
+    'dashboard.apps.DashboardConfig',  # Ensure this is the correct path to the dashboard app
     # ... other installed apps ...
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-    'dashboard.apps.DashboardConfig',  # Replace with the correct path if different
+# 'dashboard.apps.DashboardConfig',  # Uncomment or correct the path if the dashboard app exists
 
 ROOT_URLCONF = 'homelab.urls'
 
@@ -91,10 +87,14 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        # Add closing curly brace
-    }
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 # Home Assistant Configuration
