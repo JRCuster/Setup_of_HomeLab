@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.web
-    image: homelab_web:latest
+    image: drrohin/homelab_web:latest
     ports:
       - "8000:8000"
     environment:
