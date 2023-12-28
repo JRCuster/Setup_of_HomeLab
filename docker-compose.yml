@@ -1,6 +1,17 @@
 version: '3.8'
 
 services:
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=homelab
+      - POSTGRES_USER=homelab_user
+      - POSTGRES_PASSWORD=homelab_password
+    ports:
+      - "5432:5432"
+
   web:
     build:
       context: .
