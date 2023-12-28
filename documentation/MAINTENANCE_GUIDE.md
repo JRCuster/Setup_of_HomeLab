@@ -2,9 +2,11 @@
 
 This document provides instructions for regular maintenance tasks to keep the HomeLab system running smoothly.
 
-## Updating Services
+- How to update Docker services to the latest versions using Docker Swarm mode. Use the following command to update the stack:
 
-- How to update Docker images and services to the latest versions.
+  ```bash
+  docker stack deploy -c docker-compose.yml homelab
+  ```
 
 ## Monitoring System Health
 

@@ -18,8 +18,9 @@ Deploy the services using the Docker Compose files located in the `compose/` dir
 
 ```
 docker stack deploy -c <service-name>.yml <service-name>
-docker-compose up -d
 ```
+
+This will start the service in the Docker Swarm cluster.
 
 This will start the service in detached mode.
 

@@ -6,16 +6,11 @@ This document provides guidelines and instructions for developers contributing t
 
 1. Ensure Docker and Docker Compose are installed on your development machine.
 2. Clone the project repository to your local machine.
-3. Navigate to the project directory and build the Docker images:
+3. Navigate to the project directory and ensure the `docker-compose.yml` file is ready for Docker Swarm mode.
+4. Deploy the services using Docker Swarm:
 
    ```bash
-   docker-compose build
-   ```
-
-4. Start the development environment:
-
-   ```bash
-   docker-compose up
+   docker stack deploy -c docker-compose.yml homelab
    ```
 
 ## Coding Standards

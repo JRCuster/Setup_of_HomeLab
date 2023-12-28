@@ -1,19 +1,9 @@
 version: '3.8'
 
 services:
-  base:
-    build:
-      context: .
-      dockerfile: Dockerfile.base
-    image: homelab_base
-    container_name: homelab_base_test
-    command: /bin/bash
-
   web:
     build: .
-    command: gunicorn homelab.wsgi:application --bind 10.60.1.115:8000
-    volumes:
-      - .:/app
+    image: homelab_web
     ports:
       - "8000:8000"
     environment:
@@ -23,8 +13,16 @@ services:
       - DB_NAME=homelab
       - DB_USER=homelab
       - DB_PASS=homelab_secret
-      - DB_SERVICE=db
       - DB_SERVICE=postgres
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+
   nginx:
     image: nginx:1.21.6
     ports:
@@ -34,7 +32,15 @@ services:
       - static_volume:/app/static
     depends_on:
       - web
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
 
 volumes:
-  postgres_data:
+  static_volume:
   static_volume:
