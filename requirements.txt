@@ -1,5 +1,7 @@
 Django>=3.2,<4.0
 gunicorn>=20.0,<21.0
 psycopg2-binary>=2.8,<3.0
+requests>=2.26,<3.0
+whitenoise>=5.3,<6.0
 # Add any new dependencies here, and update existing ones to their latest versions
 # Example: Django==3.2.8
