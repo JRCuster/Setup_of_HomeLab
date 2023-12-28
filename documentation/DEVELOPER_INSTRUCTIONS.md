@@ -46,6 +46,15 @@ This document provides guidelines and instructions for developers contributing t
 
 - Familiarize yourself with the CI/CD pipeline defined in `.gitlab-ci.yml`.
 - Ensure that your changes pass all stages of the pipeline before merging.
+## Deployment Automation
+
+- To deploy the HomeLab stack, use the `deploy_homelab.sh` script. This script automates the process of building the `homelab_web` Docker image, pushing it to the Docker registry, and deploying the stack using Docker Swarm.
+- Ensure that you have the necessary permissions to execute the script and that Docker is running in Swarm mode.
+- Run the script from the root of the project directory:
+
+  ```bash
+  ./deploy_homelab.sh
+  ```
 
 ## Documentation
 

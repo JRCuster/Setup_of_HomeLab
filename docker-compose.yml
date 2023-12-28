@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   web:
-    build: .
+    image: homelab_web:latest
+    ports:
     image: homelab_web
     ports:
       - "8000:8000"
