@@ -2,9 +2,10 @@ version: '3.8'
 
 services:
   web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
     image: homelab_web:latest
-    ports:
-    image: homelab_web
     ports:
       - "8000:8000"
     environment:
@@ -43,5 +44,4 @@ services:
         condition: on-failure
 
 volumes:
-  static_volume:
   static_volume:
