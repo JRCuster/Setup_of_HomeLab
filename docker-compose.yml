@@ -32,6 +32,7 @@ services:
     ports:
       - "80:80"
     volumes:
+      - ./config/nginx/security/file:/etc/nginx/security/file:ro
       - ./config/nginx:/etc/nginx/conf.d
       - static_volume:/app/static
     depends_on:
