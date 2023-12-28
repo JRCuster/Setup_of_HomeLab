@@ -8,6 +8,7 @@ Setup_of_HomeLab is a Django-based project configured to run within Docker conta
 ## Prerequisites
 
 - Docker
+Please follow the instructions in `PRE_SETUP.md` before proceeding with the main setup.
 - Docker Compose
 - Git (for version control)
 

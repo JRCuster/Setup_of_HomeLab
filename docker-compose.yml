@@ -60,6 +60,7 @@ services:
       - homelab_network
 
 volumes:
+  postgres_data:
   static_volume:
 
 networks:
