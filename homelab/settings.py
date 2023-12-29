@@ -127,11 +127,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DB_NAME', 'homelab'),
-        'USER': os.getenv('DB_USER', 'homelab'),
+        'USER': os.getenv('DB_USER', 'homelab_user'),
         'PASSWORD': os.getenv('DB_PASS', 'homelab_secret'),
-        'HOST': os.getenv('DB_SERVICE', 'postgres'),
+        'HOST': os.getenv('DB_HOST', 'db'),
         'PORT': os.getenv('DB_PORT', '5432'),
     }
+}
 }
 
 # Static files (CSS, JavaScript, Images)

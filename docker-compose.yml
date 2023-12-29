@@ -1,7 +1,10 @@
 version: '3.8'
 
+version: '3.8'
+
 services:
   db:
+    hostname: db
     image: postgres:14
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -13,6 +16,7 @@ services:
       - "5432:5432"
 
   web:
+    hostname: web
     build:
       context: .
       dockerfile: Dockerfile.web
@@ -24,40 +28,22 @@ services:
       - HOME_ASSISTANT_API_URL=http://home_assistant:8123/api/
       - HOME_ASSISTANT_TOKEN=your_long_lived_access_token
       - DB_NAME=homelab
-      - DB_USER=homelab
+      - DB_USER=homelab_user
       - DB_PASS=homelab_secret
-      - DB_SERVICE=postgres
-    deploy:
-      mode: replicated
-      replicas: 1
-      update_config:
-        parallelism: 1
-        delay: 10s
-      restart_policy:
-        condition: on-failure
-    networks:
-      - homelab_network
-
-  nginx:
-    image: nginx:1.21.6
-    ports:
-      - "80:80"
-    volumes:
-      - ./config/nginx/security/file:/etc/nginx/security/file:ro
-      - ./config/nginx:/etc/nginx/conf.d
-      - static_volume:/app/static
+      - DB_HOST=db
     depends_on:
-      - web
-    deploy:
-      mode: replicated
-      replicas: 1
-      update_config:
-        parallelism: 1
-        delay: 10s
-      restart_policy:
-        condition: on-failure
-    networks:
-      - homelab_network
+      - db
+
+  home_assistant:
+    hostname: home_assistant
+    image: homeassistant/home-assistant:stable
+    volumes:
+      - /PATH_TO_YOUR_CONFIG:/config
+    environment:
+      - TZ=YOUR_TIMEZONE
+    ports:
+      - "8123:8123"
+    restart: unless-stopped
 
 volumes:
   postgres_data:
@@ -66,4 +52,5 @@ volumes:
 networks:
   homelab_network:
     driver: overlay
+    attachable: true
     attachable: true

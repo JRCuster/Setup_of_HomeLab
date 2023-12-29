@@ -35,22 +35,25 @@ def dashboard_data(request):
 from django.conf import settings
 from django.http import JsonResponse
 
-def home_assistant_status(request):
+headers = {
+    'Authorization': f'Bearer {settings.HOME_ASSISTANT_TOKEN}',
+    'Content-Type': 'application/json',
+}
+def fetch_home_assistant_states():
     try:
-        headers = {
-            'Authorization': f'Bearer {settings.HOME_ASSISTANT_TOKEN}',
-            'Content-Type': 'application/json',
-        }
         response = requests.get(f"{settings.HOME_ASSISTANT_API_URL}states", headers=headers)
         response.raise_for_status()
         return JsonResponse(response.json(), safe=False)
     except requests.exceptions.RequestException as e:
         return JsonResponse({'error': str(e)}, status=502)
+
 # Endpoint for fetching dashboard data in JSON format
-def dashboard_data(request):
+def dashboard_data():
     data = {
         'cluster_status': fetch_cluster_status(),
         'service_health': fetch_service_health(),
         # Include additional data as needed
     }
     return JsonResponse(data)
+
+fetch_home_assistant_states()
