@@ -51,6 +51,69 @@ Configure alerting rules in Prometheus to monitor the health of the Docker Swarm
 ## SSL Configuration
 Ensure that SSL is configured for secure communication. Follow the instructions in `security/ssl_config.conf` to set up SSL certificates and update the Nginx configuration to use HTTPS.
 
+## Configuring ALLOWED_HOSTS
+
+To allow your Django application to serve requests from different hosts, you need to update the `ALLOWED_HOSTS` setting in your `settings.py` file. Add the IP addresses or domain names that your application should serve. For example:
+
+```python
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '10.60.1.91', '10.60.1.115']
+```
+
+## Correcting Syntax Errors in views.py
+
+Ensure that all `return` statements in your `views.py` file are within function definitions. A `return` statement outside of a function will cause a `SyntaxError`. Here's an example of a correctly formatted view function:
+
+```python
+from django.shortcuts import render
+
+def my_view(request):
+    # Your view logic here
+    return render(request, 'my_template.html', {'my': 'context'})
+```
+## Configuring ALLOWED_HOSTS
+
+To allow your Django application to serve requests from different hosts, you need to update the `ALLOWED_HOSTS` setting in your `settings.py` file. Add the IP addresses or domain names that your application should serve. For example:
+
+```python
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '10.60.1.91', '10.60.1.115']
+```
+
+## Correcting Syntax Errors in views.py
+
+Ensure that all `return` statements in your `views.py` file are within function definitions. A `return` statement outside of a function will cause a `SyntaxError`. Here's an example of a correctly formatted view function:
+
+```python
+from django.shortcuts import render
+
+def my_view(request):
+    # Your view logic here
+    return render(request, 'my_template.html', {'my': 'context'})
+```
+## Update ALLOWED_HOSTS in settings.py
+
+To allow your Django application to serve requests from different hosts, update the `ALLOWED_HOSTS` setting in `settings.py`:
+
+```python
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '10.60.1.91', '10.60.1.115']
+```
+
+Add any additional hostnames or IP addresses that your application should respond to.
+
+## Template Configuration
+
+Ensure that your views are pointing to the correct templates. For example, the `dashboard` view should render `dashboard/index.html`:
+
+```python
+# views.py
+
+from django.shortcuts import render
+
+def dashboard(request):
+    # Your logic here
+    return render(request, 'dashboard/index.html')  # Update this line to the correct template path
+```
+
+If you have a `dashboard.html` template that is not being used, consider removing it to avoid confusion.
 ## Final Steps
 After completing the above steps, verify that all services are running correctly and that the dashboard is accessible and displaying data as expected. Consult the `USER_MANUAL.md` for guidance on using the dashboard and the monitoring tools.
 ... (additional setup instructions)

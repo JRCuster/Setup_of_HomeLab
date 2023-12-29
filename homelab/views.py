@@ -1,31 +1,30 @@
 from django.http import JsonResponse
 
+import requests
+from django.http import JsonResponse, HttpResponse
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
+from .dashboard_utils import fetch_cluster_status, fetch_service_health
+
 def pihole_status(request):
     # Placeholder for actual PiHole status fetching logic
     status = 'Active'  # This should be replaced with actual status check
     return JsonResponse({'status': status})
-from django.http import HttpResponse
 
+@login_required
 def home(request):
     return HttpResponse("Hello, welcome to the homelab project!")
-import requests
-from django.shortcuts import render
 
-# New view for the dashboard
-# Ensure the 'dashboard' view is included and correctly defined
-# Ensure the 'dashboard' view is included and correctly defined
 def dashboard(request):
     # Placeholder context data
     context = {
         'cluster_status': 'active',  # Example data, to be replaced with actual data fetching logic
         # Add more context data as needed
     }
-return render(request, 'dashboard/index.html', context)
-from .dashboard_utils import fetch_cluster_status, fetch_service_health
+    return render(request, 'dashboard/index.html', context)
 
-# Endpoint for fetching dashboard data in JSON format
-from django.contrib.auth.decorators import login_required
-
+@login_required
 def dashboard_data(request):
     data = {
         'cluster_status': fetch_cluster_status(),
