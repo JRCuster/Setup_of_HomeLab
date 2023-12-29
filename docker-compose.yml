@@ -4,7 +4,7 @@ version: '3.8'
 
 services:
   db:
-    hostname: db
+    hostname: prostgres
     image: postgres:14
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -30,7 +30,7 @@ services:
       - DB_NAME=homelab
       - DB_USER=homelab_user
       - DB_PASS=homelab_secret
-      - DB_HOST=db
+      - DB_HOST=postgres
     depends_on:
       - db
 
@@ -40,7 +40,7 @@ services:
     volumes:
       - /PATH_TO_YOUR_CONFIG:/config
     environment:
-      - TZ=YOUR_TIMEZONE
+      - TZ=America/Chicago
     ports:
       - "8123:8123"
     restart: unless-stopped
@@ -51,6 +51,5 @@ volumes:
 
 networks:
   homelab_network:
-    driver: overlay
-    attachable: true
+    driver: bridge
     attachable: true

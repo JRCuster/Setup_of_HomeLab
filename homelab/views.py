@@ -39,8 +39,7 @@ headers = {
     'Authorization': f'Bearer {settings.HOME_ASSISTANT_TOKEN}',
     'Content-Type': 'application/json',
 }
-def fetch_home_assistant_states():
-    try:
+response = requests.get(f"{settings.HOME_ASSISTANT_API_URL}states", headers=headers)
         response = requests.get(f"{settings.HOME_ASSISTANT_API_URL}states", headers=headers)
         response.raise_for_status()
         return JsonResponse(response.json(), safe=False)
