@@ -5,7 +5,7 @@ from django.urls import reverse
 
 class DashboardTestCase(TestCase):
 
-
+    def test_dashboard_loading(self):
         # Test to ensure the dashboard loads correctly
         response = self.client.get(reverse('dashboard'))
         self.assertEqual(response.status_code, 200)
