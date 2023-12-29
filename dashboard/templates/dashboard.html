@@ -1,7 +1,12 @@
 {% extends "dashboard/index.html" %}
 {% load static %}
-
+{% block title %}Dashboard{% endblock %}
+{% block head %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/fantasy.css' %}"> // Add custom CSS for fantasy theme
+{% endblock %}
 {% block content %}
   <h1>Dashboard</h1>
-  <p>Welcome to the Dashboard! This is a placeholder for your dashboard content.</p>
+  <p>Welcome to the Fantasy Dashboard! This is a placeholder for your fantasy-themed dashboard content.</p> // Modify content for fantasy theme
 {% endblock %}
