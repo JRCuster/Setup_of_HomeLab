@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib import messages
-
+from setup_assistant.forms import SetupForm
+from scripts.update_stack import update_docker_stack_configuration, redeploy_services
 from Setup_of_HomeLab.homelab.settings import DATABASES, DOCKER_SWARM_API_URL  # Import the 'messages' module
 from .forms import SetupForm
 
