@@ -30,7 +30,7 @@ SECRET_KEY = (
 DEBUG = True  # Set to False in production
 
 # Adjusted line length for ALLOWED_HOSTS
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '10.60.1.91']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '10.60.1.91', '10.60.1.115']
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'

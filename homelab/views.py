@@ -20,7 +20,7 @@ def dashboard(request):
         'cluster_status': 'active',  # Example data, to be replaced with actual data fetching logic
         # Add more context data as needed
     }
-    return render(request, 'dashboard.html', context)
+return render(request, 'dashboard/index.html', context)
 from .dashboard_utils import fetch_cluster_status, fetch_service_health
 
 # Endpoint for fetching dashboard data in JSON format
